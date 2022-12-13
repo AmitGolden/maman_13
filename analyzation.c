@@ -69,7 +69,7 @@ static float get_comparisons_average_of_a(const uint64_t *counters,
 
 const quicksort_analyzation analyze_quicksort(const int n, const float a,
                                               const bool use_good_pivot) {
-    const int max_comparisons = (n * (n + 7)) / 2;
+    const int max_comparisons = (n / 2 + 3) * (n - 1);
     uint64_t comparison_counters[max_comparisons];
     fill_array_zero(comparison_counters, max_comparisons);
 

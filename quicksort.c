@@ -15,8 +15,8 @@ static int partition(int *arr, const int left, const int right,
     return lower_than_pivot + 1;
 }
 
-static int good_pivot(int *arr, const int left, const int right,
-                      int *comparison_counter) {
+static int find_good_pivot(int *arr, const int left, const int right,
+                           int *comparison_counter) {
     if (right - left < 3) {
         return left;
     }
@@ -57,7 +57,8 @@ static void quicksort(int *arr, const int left, const int right,
                       const bool use_good_pivot, int *comparison_counter) {
     if (left < right) {
         if (use_good_pivot) {
-            const int pivot = good_pivot(arr, left, right, comparison_counter);
+            const int pivot =
+                find_good_pivot(arr, left, right, comparison_counter);
             swap(arr, pivot, right - 1);
         }
         const int pivot_new_index =
