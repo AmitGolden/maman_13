@@ -107,7 +107,7 @@ Analyze the quick-sort for all permutations in size n, and take average of the b
 */
 const quicksort_analyzation analyze_quicksort(const int n, const float a,
                                               const bool use_good_pivot) {
-    const int max_comparisons = (n * (n + 7)) / 2; // The maximum number of comparisons a permutation could have is n(n+7)/2.
+    const int max_comparisons = (n / 2 + 3) * (n - 1);
     uint64_t comparison_counters[max_comparisons];
     fill_array_zero(comparison_counters, max_comparisons); // Creating comparison counters arrays and initializing to zero.
 

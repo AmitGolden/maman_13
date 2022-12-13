@@ -38,8 +38,8 @@ Comparisons of the array elements are counted using comparison_counter.
 @param comparison_counter a pointer to the counter of the comparison
 @return the index of the good pivot (not minimal and not maximal element)
 */
-static int good_pivot(int *arr, const int left, const int right,
-                      int *comparison_counter) {
+static int find_good_pivot(int *arr, const int left, const int right,
+                           int *comparison_counter) {
     if (right - left < 3) {
         return left; // Not relevant when sorting less than three elements.
     }
@@ -93,7 +93,8 @@ static void quicksort(int *arr, const int left, const int right,
                       const bool use_good_pivot, int *comparison_counter) {
     if (left < right) {
         if (use_good_pivot) {
-            const int pivot = good_pivot(arr, left, right, comparison_counter);
+            const int pivot =
+                find_good_pivot(arr, left, right, comparison_counter);
             swap(arr, pivot, right - 1); // Swapping the good pivot with the current one
         }
         const int pivot_new_index =
