@@ -8,10 +8,10 @@ void swap(int *arr, const int x, const int y) {
     arr[y] = temp;
 }
 
-int factorial(const int n) {
+uint64_t factorial(const int n) {
     if (n <= 1) return 1;
 
-    int product = 1;
+    uint64_t product = 1;
     for (int i = 1; i <= n; i++) {
         product *= i;
     }

@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 void swap(int *arr, const int x, const int y);
-int factorial(const int n);
+uint64_t factorial(const int n);
 void print_array(int *arr, const int n);
 void array_copy(const int *source, int *destination, const int n);
 void array_copy_64(const uint64_t *source, uint64_t *destination, const int n);

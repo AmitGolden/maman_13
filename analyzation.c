@@ -12,7 +12,7 @@ void print_analyzation(const quicksort_analyzation analyzation) {
     printf("Best Average: %.2f\n", analyzation.best_average);
 }
 
-void print_percentage(const int total, const int current) {
+void print_percentage(const uint64_t total, const uint64_t current) {
     const float percentage = (float)current * 100 / (float)total;
     if (current % 1000000 == 0) {
         printf("\r%.1f%%", percentage);
